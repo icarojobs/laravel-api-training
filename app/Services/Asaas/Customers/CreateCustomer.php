@@ -43,8 +43,6 @@ class CreateCustomer
 
     public function toArray(JsonResponse $response): array
     {
-        $rawData = json_decode(json_encode($response), true);
-
-        return $rawData['original'] ?? [];
+        return $response->getData(true);
     }
 }
